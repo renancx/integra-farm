@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('lotes_tables', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('cpf', 11)->unique();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('city');
+            $table->integer('tamanho_lote');
+            $table->date('chegada_lote');
+            $table->date('saida_lote');
+            $table->boolean('vendido_lote')->default(false);
             $table->timestamps();
+            $table->foreignId('user_id')->constrained('users');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('lotes_tables');
     }
 };
