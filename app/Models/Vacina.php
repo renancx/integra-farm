@@ -9,7 +9,10 @@ class Vacina extends Model
 {
     use HasFactory;
 
-    protected $table = 'vacinas_tables';
+    protected $fillable = [
+        'nome_vacina',
+        'data_aplicacao'
+    ];
 
     public function lote()
     {
