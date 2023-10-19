@@ -10,7 +10,7 @@
 <body>
     @auth
     <h1>Hi, {{ auth()->user()->name }}</h1>
-    <form action="/logout" method="POST">
+    <form id="logout" action="/logout" method="POST">
         @csrf
         <button type="submit">Logout</button>
     </form>
