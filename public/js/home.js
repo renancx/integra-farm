@@ -21,3 +21,27 @@ function showRegister() {
         registerForms.style.display = "none";
     }
 }
+
+function showLoteRegister() {
+    var loteRegister = document.getElementById("lote-register");
+    var loteRegisterButton = document.getElementById("lote-button");
+
+    if (loteRegister.style.display === "none") {
+        loteRegister.style.display = "block";
+        loteRegisterButton.style.display = "none";
+    } else {
+        loteRegister.style.display = "none";
+    }
+}
+
+function hideLoteRegister() {
+    var loteRegister = document.getElementById("lote-register");
+    var loteRegisterButton = document.getElementById("lote-button");
+
+    if (loteRegister.style.display === "block") {
+        loteRegister.style.display = "none";
+        loteRegisterButton.style.display = "block";
+    } else {
+        loteRegister.style.display = "block";
+    }
+}

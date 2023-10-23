@@ -35,7 +35,11 @@
         </table>
     </div>
 
-    <div id="lote-register" style="border: 1px solid black; padding: 10px;">
+    <div>
+        <button id="lote-button" onclick="showLoteRegister()">Novo lote</button>
+    </div>
+
+    <div id="lote-register" style="display: none">
         <h2>Novo lote</h2>
         <form action="/lote" method="POST" style = "display: flex; flex-direction: column; align-items: center;">
             @csrf
@@ -44,6 +48,7 @@
             <input type="date" name="saida_lote" placeholder="Data de saída" autocomplete="off">
             <input type="text" name="observacao_lote" placeholder="Observação" autocomplete="off">
             <button type="submit">Cadastrar</button>
+            <button type="button" onclick="hideLoteRegister()">Cancelar</button>
         </form>
     </div>
 
