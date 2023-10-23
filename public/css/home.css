@@ -1,82 +1,111 @@
-* { 
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Verdana', sans-serif;
-}
-
-/* overall styles */
-body {
-    font-family: 'Verdana', sans-serif;
     background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; 
-    height: 100vh;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
     padding: 20px;
-    position: relative; 
-    font-size: 16px;
 }
 
-/* header styles */
 h1 {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    display: flex;
+    font-size: 24px;
 }
 
-div {
-    position: absolute; 
-    top: 0; 
-    right: 20px; 
-    display: flex;
-    gap: 10px;
+h2 {
+    font-size: 20px;
 }
 
-/* styles for the login and register forms */
-#register, #login {
-    border: 1px solid #000;
-    padding: 10px;
-    margin: 50px;
-    margin-right: 0; 
-    text-align: center;
-    background-color: #fff;
-    width: 300px;
-    border-radius: 5px;
-    position: absolute;
-    right: 40px;
-}
+/* Estilos para a área autenticada */
+    h1 {
+        font-size: 28px;
+    }
 
-#logout {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    margin-right: 0;
-    margin-top: 0;
-}
+    #logout {
+        text-align: right;
+    }
 
-/* form styles */
-form {
-    flex-direction: column;
-    align-items: center;
-}
+    #lote-show {
+        background-color: #fff;
+        padding: 20px;
+        margin-top: 20px;
+    }
 
-input {
-    width: 100%;
-    margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+    #lote-register {
+        background-color: #fff;
+        padding: 20px;
+        margin-top: 20px;
+    }
 
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    #lote-register form input {
+        margin: 10px 0;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+
+    #lote-register form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    #lote-register form button:hover {
+        background-color: #0056b3;
+    }
+
+/* Estilos para a área não autenticada */
+    #title {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 100px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #register, #login {
+        background-color: #fff;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    #register form, #login form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #register form input, #login form input {
+        margin: 10px 0;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+
+    #register form button, #login form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    #register form button:hover, #login form button:hover {
+        background-color: #0056b3;
+    }
