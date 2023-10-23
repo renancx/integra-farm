@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lotes_tables', function (Blueprint $table) {
+        Schema::create('lotes', function (Blueprint $table) {
             $table->id();
             $table->integer('tamanho_lote');
             $table->date('chegada_lote');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lotes_tables');
+        Schema::dropIfExists('lotes');
     }
 };
