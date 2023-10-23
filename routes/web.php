@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Lote;
+use App\Models\Vacina;
+
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoteController;
 use App\Http\Controllers\VacinaController;
@@ -17,7 +20,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $lotes = [];
+
+    if(auth()->check()){
+        $lotes = Lote::where('user_id', auth()->user()->id)->get();
+    }
+
+    return view('home', ['lotes' => $lotes]);
 });
 
 Route::post('/register', [UserController::class, 'register']);

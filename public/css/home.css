@@ -1,111 +1,74 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
+/* Reset de estilos padrão do navegador */
+body, h1, h2, table {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    text-align: center;
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
+/* Estilos para o cabeçalho */
 h1 {
     font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Estilos para a área de autenticação */
+#lote-show, #lote-register {
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-/* Estilos para a área autenticada */
-    h1 {
-        font-size: 28px;
-    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-    #logout {
-        text-align: right;
-    }
+table, th, td {
+    border: 1px solid #000;
+}
 
-    #lote-show {
-        background-color: #fff;
-        padding: 20px;
-        margin-top: 20px;
-    }
+th, td {
+    padding: 5px;
+}
 
-    #lote-register {
-        background-color: #fff;
-        padding: 20px;
-        margin-top: 20px;
-    }
+/* Estilos para os formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    #lote-register form input {
-        margin: 10px 0;
-        padding: 10px;
-        width: 100%;
-        border: 1px solid #ccc;
-    }
+input, button {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-    #lote-register form button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
+/* Estilos para botões */
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
 
-    #lote-register form button:hover {
-        background-color: #0056b3;
-    }
+button:hover {
+    background-color: #0056b3;
+}
 
-/* Estilos para a área não autenticada */
-    #title {
-        text-align: center;
-        font-size: 36px;
-        margin-top: 100px;
-    }
+/* Mostrar/ocultar os formulários de registro e login */
+#register, #login {
+    display: none;
+}
 
-    button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #0056b3;
-    }
-
-    #register, #login {
-        background-color: #fff;
-        padding: 20px;
-        margin-top: 20px;
-    }
-
-    #register form, #login form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #register form input, #login form input {
-        margin: 10px 0;
-        padding: 10px;
-        width: 100%;
-        border: 1px solid #ccc;
-    }
-
-    #register form button, #login form button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-
-    #register form button:hover, #login form button:hover {
-        background-color: #0056b3;
-    }

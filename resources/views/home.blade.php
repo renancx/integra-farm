@@ -15,12 +15,27 @@
         <button type="submit">Logout</button>
     </form>
     
-    <div id="lote-show">
+    <div id="lote-show" style="border: 1px solid black; padding: 10px;">
         <h2>Lotes do usuário</h2>
-
+        <table>
+            <tr>
+                <th>Tamanho do lote</th>
+                <th>Data de chegada</th>
+                <th>Data de saída</th>
+                <th>Observação</th>
+            </tr>
+            @foreach ($lotes as $lote)
+            <tr>
+                <td>{{ $lote->tamanho_lote }}</td>
+                <td>{{ $lote->chegada_lote }}</td>
+                <td>{{ $lote->saida_lote }}</td>
+                <td>{{ $lote->observacao_lote }}</td>
+            </tr>
+            @endforeach
+        </table>
     </div>
 
-    <div id="lote-register">
+    <div id="lote-register" style="border: 1px solid black; padding: 10px;">
         <h2>Novo lote</h2>
         <form action="/lote" method="POST" style = "display: flex; flex-direction: column; align-items: center;">
             @csrf
