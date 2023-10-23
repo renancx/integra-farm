@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('tamanho_lote');
             $table->date('chegada_lote');
             $table->date('saida_lote');
+            $table->text('observacao_lote')->nullable();
             $table->boolean('vendido_lote')->default(false);
             $table->timestamps();
             $table->foreignId('user_id')->constrained('users');
