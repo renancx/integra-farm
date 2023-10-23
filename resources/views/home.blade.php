@@ -15,8 +15,25 @@
         <button type="submit">Logout</button>
     </form>
     
+    <div id="lote-show">
+        <h2>Lotes do usuário</h2>
+
+    </div>
+
+    <div id="lote-register">
+        <h2>Novo lote</h2>
+        <form action="/lote" method="POST" style = "display: flex; flex-direction: column; align-items: center;">
+            @csrf
+            <input type="number" name="tamanho_lote" placeholder="Tamanho do lote" autocomplete="off">
+            <input type="date" name="chegada_lote" placeholder="Data de chegada" autocomplete="off">
+            <input type="date" name="saida_lote" placeholder="Data de saída" autocomplete="off">
+            <input type="text" name="observacao_lote" placeholder="Observação" autocomplete="off">
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
     @else
-    <h1 id = "title">Welcome to the website</h1>
+    <h1 id="title">Welcome to the website</h1>
     <div>
         <button onclick="showRegister()">Register</button>
         <button onclick="showLogin()">Log in</button>

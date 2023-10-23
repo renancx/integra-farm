@@ -13,7 +13,6 @@ class Lote extends Model
         'tamanho_lote',
         'chegada_lote',
         'saida_lote',
-        'vendido_lote',
         'observacao_lote',
     ];
 
