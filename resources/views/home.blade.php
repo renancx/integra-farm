@@ -25,12 +25,14 @@
                 <th>Observação</th>
             </tr>
             @foreach ($lotes as $lote)
+            @if ($lote->vendido_lote == false)
             <tr>
                 <td>{{ $lote->tamanho_lote }}</td>
                 <td>{{ $lote->chegada_lote }}</td>
                 <td>{{ $lote->saida_lote }}</td>
                 <td>{{ $lote->observacao_lote }}</td>
             </tr>
+            @endif
             @endforeach
         </table>
     </div>
