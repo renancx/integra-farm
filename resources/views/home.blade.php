@@ -23,6 +23,7 @@
                 <th>Data de chegada</th>
                 <th>Data de saída</th>
                 <th>Observação</th>
+                <th>Editar</th>
             </tr>
             @foreach ($lotes as $lote)
             @if ($lote->vendido_lote == false)
@@ -31,6 +32,22 @@
                 <td>{{ $lote->chegada_lote }}</td>
                 <td>{{ $lote->saida_lote }}</td>
                 <td>{{ $lote->observacao_lote }}</td>
+                <td>
+                    <div id="lote-edit-{{ $lote->id }}" style="display: none">
+                        <h2>Editar lote</h2>
+                        <form action="/lote-edit/{{ $lote->id }}" method="POST" style = "display: flex; flex-direction: column; align-items: center;">
+                            @csrf
+                            @method('PUT')
+                            <input type="number" name="tamanho_lote" placeholder="Tamanho do lote" autocomplete="off">
+                            <input type="date" name="chegada_lote" placeholder="Data de chegada" autocomplete="off">
+                            <input type="date" name="saida_lote" placeholder="Data de saída" autocomplete="off">
+                            <input type="text" name="observacao_lote" placeholder="Observação" autocomplete="off">
+                            <button type="submit">Confirmar</button>
+                            <button type="button" onclick="hideLoteEdit('{{ $lote->id }}')">Cancelar</button>
+                        </form>
+                    </div>
+                    <button class="popup-button" id="lote-edit-button" onclick="showLoteEdit('{{ $lote->id }}')">Editar</button>
+                </td>
             </tr>
             @endif
             @endforeach

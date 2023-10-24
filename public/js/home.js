@@ -45,3 +45,27 @@ function hideLoteRegister() {
         loteRegister.style.display = "block";
     }
 }
+
+function showLoteEdit(loteID) {
+    var loteEdit = document.getElementById("lote-edit-" + loteID);
+    var loteEditButton = document.getElementById("lote-edit-button");
+
+    if (loteEdit.style.display === "none") {
+        loteEdit.style.display = "block";
+        loteEditButton.style.display = "none";
+    } else {
+        loteEdit.style.display = "none";
+    }
+}
+
+function hideLoteEdit(loteID) {
+    var loteEdit = document.getElementById("lote-edit-" + loteID);
+    var loteEditButton = document.getElementById("lote-edit-button");
+
+    if (loteEdit.style.display === "block") {
+        loteEdit.style.display = "none";
+        loteEditButton.style.display = "block";
+    } else {
+        loteEdit.style.display = "block";
+    }
+}

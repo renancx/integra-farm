@@ -35,3 +35,5 @@ Route::post('/login', [UserController::class, 'login']);
 
 //Controle de lotes
 Route::post('/lote', [LoteController::class, 'newLote']);
+Route::post('/lote-edit/{id}', [LoteController::class, 'editLote']);
+Route::put('/lote-edit/{id}', [LoteController::class, 'updateLote']);
