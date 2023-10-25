@@ -12,8 +12,15 @@
 <body>
     @auth
     <script>
-        document.getElementById('page-title').innerHTML = 'Inicio - Integrador';
+        document.getElementById('page-title').innerHTML = 'Início - Integrador';
     </script>
+
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/vendidos">Lotes vendidos</a></li>
+        </ul>
+    </nav>
 
     <h1>Hi, {{ auth()->user()->name }}</h1>
     <form id="logout" action="/logout" method="POST">

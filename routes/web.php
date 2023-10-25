@@ -39,3 +39,14 @@ Route::post('/lote-edit/{id}', [LoteController::class, 'editLote']);
 Route::put('/lote-edit/{id}', [LoteController::class, 'updateLote']);
 Route::post('/lote-sell/{id}', [LoteController::class, 'sellLote']);
 Route::put('/lote-sell/{id}', [LoteController::class, 'sell_lote']);
+
+//lotes vendidos
+Route::get('/vendidos', function () {
+    $lotes = [];
+
+    if(auth()->check()){
+        $lotes = Lote::where('user_id', auth()->user()->id)->get();
+    }
+
+    return view('vendidos', ['lotes' => $lotes]);
+});
