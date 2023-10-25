@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title id="page-title">Integrador - Gerenciador de Fazendas</title>
     <link rel="stylesheet" href="/css/home.css">
     <script src="/js/home.js"></script>
+    <!-- Favicon color: #285 -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
     @auth
+    <script>
+        document.getElementById('page-title').innerHTML = 'Inicio - Integrador';
+    </script>
+
     <h1>Hi, {{ auth()->user()->name }}</h1>
     <form id="logout" action="/logout" method="POST">
         @csrf
@@ -16,7 +22,7 @@
     </form>
     
     <div id="lote-show" style="border: 1px solid black; padding: 10px;">
-        <h2>Lotes do usuário</h2>
+        <h2>Lotes de suínos</h2>
         <table>
             <tr>
                 <th>Tamanho do lote</th>
