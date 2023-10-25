@@ -30,6 +30,7 @@
                 <th>Data de saída</th>
                 <th>Observação</th>
                 <th>Editar</th>
+                <th>Vender</th>
             </tr>
             @foreach ($lotes as $lote)
             @if ($lote->vendido_lote == false)
@@ -44,15 +45,29 @@
                         <form action="/lote-edit/{{ $lote->id }}" method="POST" style = "display: flex; flex-direction: column; align-items: center;">
                             @csrf
                             @method('PUT')
-                            <input type="number" name="tamanho_lote" placeholder="Tamanho do lote" autocomplete="off">
-                            <input type="date" name="chegada_lote" placeholder="Data de chegada" autocomplete="off">
-                            <input type="date" name="saida_lote" placeholder="Data de saída" autocomplete="off">
-                            <input type="text" name="observacao_lote" placeholder="Observação" autocomplete="off">
+                            <input type="number" name="tamanho_lote" placeholder="Tamanho do lote" autocomplete="off" value="{{ $lote->tamanho_lote }}">
+                            <input type="date" name="chegada_lote" placeholder="Data de chegada" autocomplete="off" value="{{ $lote->chegada_lote }}">
+                            <input type="date" name="saida_lote" placeholder="Data de saída" autocomplete="off" value="{{ $lote->saida_lote }}">
+                            <input type="text" name="observacao_lote" placeholder="Observação" autocomplete="off" value="{{ $lote->observacao_lote }}">
                             <button type="submit">Confirmar</button>
                             <button type="button" onclick="hideLoteEdit('{{ $lote->id }}')">Cancelar</button>
                         </form>
                     </div>
-                    <button class="popup-button" id="lote-edit-button" onclick="showLoteEdit('{{ $lote->id }}')">Editar</button>
+                    <button id="lote-edit-button" onclick="showLoteEdit('{{ $lote->id }}')">Editar</button>
+                </td>
+                <td>
+                    <div id="lote-sell-{{ $lote->id }}" style="display: none">
+                        <h2>Vender lote</h2>
+                        <form action="/lote-sell/{{ $lote->id }}" method="POST" style = "display: flex; flex-direction: column; align-items: center;">
+                            @csrf
+                            @method('PUT')
+                            <p>Data da venda</p>
+                            <input type="date" name="saida_lote_venda" placeholder="Data da venda" autocomplete="off" value="{{ date('Y-m-d') }}">
+                            <button type="submit">Confirmar</button>
+                            <button type="button" onclick="hideLoteSell('{{ $lote->id }}')">Cancelar</button>
+                        </form>
+                    </div>
+                    <button id="lote-sell-button" onclick="showLoteSell('{{ $lote->id }}')">Vender</button>
                 </td>
             </tr>
             @endif
@@ -69,7 +84,7 @@
         <form action="/lote" method="POST" style = "display: flex; flex-direction: column; align-items: center;">
             @csrf
             <input type="number" name="tamanho_lote" placeholder="Tamanho do lote" autocomplete="off">
-            <input type="date" name="chegada_lote" placeholder="Data de chegada" autocomplete="off">
+            <input type="date" name="chegada_lote" placeholder="Data de chegada" autocomplete="off" value="{{ date('Y-m-d') }}">
             <input type="date" name="saida_lote" placeholder="Data de saída" autocomplete="off">
             <input type="text" name="observacao_lote" placeholder="Observação" autocomplete="off">
             <button type="submit">Cadastrar</button>

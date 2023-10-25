@@ -69,3 +69,27 @@ function hideLoteEdit(loteID) {
         loteEdit.style.display = "block";
     }
 }
+
+function showLoteSell(loteID) {
+    var loteSell = document.getElementById("lote-sell-" + loteID);
+    var loteSellButton = document.getElementById("lote-sell-button");
+
+    if (loteSell.style.display === "none") {
+        loteSell.style.display = "block";
+        loteSellButton.style.display = "none";
+    } else {
+        loteSell.style.display = "none";
+    }
+}
+
+function hideLoteSell(loteID) {
+    var loteSell = document.getElementById("lote-sell-" + loteID);
+    var loteSellButton = document.getElementById("lote-sell-button");
+
+    if (loteSell.style.display === "block") {
+        loteSell.style.display = "none";
+        loteSellButton.style.display = "block";
+    } else {
+        loteSell.style.display = "block";
+    }
+}

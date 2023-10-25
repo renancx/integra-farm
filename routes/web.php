@@ -37,3 +37,5 @@ Route::post('/login', [UserController::class, 'login']);
 Route::post('/lote', [LoteController::class, 'newLote']);
 Route::post('/lote-edit/{id}', [LoteController::class, 'editLote']);
 Route::put('/lote-edit/{id}', [LoteController::class, 'updateLote']);
+Route::post('/lote-sell/{id}', [LoteController::class, 'sellLote']);
+Route::put('/lote-sell/{id}', [LoteController::class, 'sell_lote']);

@@ -7,6 +7,24 @@ use Illuminate\Http\Request;
 
 class LoteController extends Controller
 {
+    public function sell_lote(Request $request, $id){
+        $lote = Lote::find($id);
+        $lote->vendido_lote = true;
+        $lote->saida_lote = $request->saida_lote_venda;
+        $lote->save();
+
+        return redirect('/');
+    }
+
+    public function sellLote(Request $request, $id){
+        $lote = Lote::find($id);
+        $lote->vendido_lote = true;
+        $lote->saida_lote = $request->saida_lote_venda;
+        $lote->save();
+
+        return redirect('/');
+    }
+
     public function updateLote(Request $request, $id){
         $lote = Lote::find($id);
         $lote->tamanho_lote = $request->tamanho_lote;
