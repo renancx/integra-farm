@@ -12,7 +12,7 @@
 <body>
     @auth
     <script>
-        document.getElementById('page-title').innerHTML = 'Início - Integrador';
+        document.getElementById('page-title').innerHTML = 'Integrador';
     </script>
 
     <nav>
@@ -95,7 +95,10 @@
     </div>
 
     @else
-    <h1 id="title">Welcome to the website</h1>
+    <h1 id="title">Integrador</h1>
+    <p id="subtitle">Simplifique a gestão de sua fazenda e potencialize seus resultados</p>
+    <p id="subtitle">Faça login ou registre-se para começar</p>
+
     <div>
         <button onclick="showRegister()">Register</button>
         <button onclick="showLogin()">Log in</button>
