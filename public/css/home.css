@@ -71,3 +71,15 @@ button:hover {
 #register, #login {
     display: none;
 }
+
+.lote-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+} 
+  
+.lote-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 0;
+}
