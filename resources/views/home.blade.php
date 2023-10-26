@@ -20,13 +20,15 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="/vendidos">Lotes vendidos</a></li>
         </ul>
+        <div class="navbar-right">
+            <form id="logout" action="/logout" method="POST">
+                @csrf
+                <button type="submit">Logout</button>
+            </form>
+        </div>
     </nav>
 
     <h1>Hi, {{ auth()->user()->name }}</h1>
-    <form id="logout" action="/logout" method="POST">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
     
     <div id="lote-show">
         <h2>Lotes de suínos</h2>
