@@ -15,18 +15,7 @@
         document.getElementById('page-title').innerHTML = 'Integrador';
     </script>
 
-    <nav>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/vendidos">Lotes vendidos</a></li>
-        </ul>
-        <div class="navbar-right">
-            <form id="logout" action="/logout" method="POST">
-                @csrf
-                <button type="submit">Logout</button>
-            </form>
-        </div>
-    </nav>
+    @include('partials.navbar')
 
     <h1>Hi, {{ auth()->user()->name }}</h1>
     

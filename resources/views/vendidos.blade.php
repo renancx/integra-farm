@@ -9,12 +9,7 @@
 </head>
 <body>
     @auth
-    <nav>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/vendidos">Lotes vendidos</a></li>
-        </ul>
-    </nav>
+    @include('partials.navbar')
 
     <div id="vendidos">
         <h1>Lotes vendidos</h1>
@@ -40,11 +35,8 @@
 
 
     @else
-    <nav>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-        </ul>
-    </nav>
+    <!-- Se o usuário tentar acessar essa página pela url, ele será redirecionado para a página de login -->
+    @include('partials.guest')
 
     @endauth
 </body>
