@@ -93,3 +93,14 @@ function hideLoteSell(loteID) {
         loteSell.style.display = "block";
     }
 }
+
+function changeDescription(titleNumber) {
+      const descriptions = [
+        'Tenha acesso a uma plataforma de gerenciamento de lotes, onde você pode cadastrar, editar e vender lotes de forma simples e rápida.',
+        'Acesse a plataforma de gerenciamento de lotes de qualquer lugar, a qualquer hora, com qualquer dispositivo.',
+        'Mantenha o controle de todos os seus lotes',
+        'Cadastre as vacinas aplicadas em cada lote e tenha acesso a um histórico de vacinação.'
+      ];
+
+      document.getElementById('description').innerHTML = descriptions[titleNumber - 1];
+    }

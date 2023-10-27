@@ -136,3 +136,28 @@ nav ul li a:hover {
 #logout button:hover {
     background-color: #ccc;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont {
+    flex-direction:column;
+    font-size: 15px;
+}
+
+.left {
+    width: 45%;
+    padding: 10px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.right {
+    width: 55%;
+    padding: 10px;
+    background-color: #e5e5e5;
+    position: relative;
+}
