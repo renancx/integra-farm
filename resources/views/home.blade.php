@@ -65,7 +65,6 @@
         </div>
     </div>
 
-
     <div>
         <button id="lote-button" onclick="showLoteRegister()">Novo lote</button>
     </div>
@@ -116,10 +115,8 @@
         </form>
     </div>
 
-    <!-- div clicável para mudar a descrição -->
     <div class="container" dysplay="clickable">
         <div class="cont">
-            <!-- Divisão à esquerda com títulos -->
             <div class="left" onclick="changeDescription(1)">
                 <h3>A sua fazenda sob controle</h3>
             </div>
@@ -134,7 +131,6 @@
             </div>
         </div>
 
-        <!-- Divisão à direita para a descrição do título selecionado -->
         <div class="right" id="description">
         <p>Selecione um título à esquerda para ver a descrição correspondente aqui.</p>
         </div>

@@ -35,7 +35,6 @@
 
 
     @else
-    <!-- Se o usuário tentar acessar essa página pela url, ele será redirecionado para a página de login -->
     @include('partials.guest')
 
     @endauth
