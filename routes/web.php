@@ -50,3 +50,14 @@ Route::get('/vendidos', function () {
 
     return view('vendidos', ['lotes' => $lotes]);
 });
+
+//Controle de vacinas
+Route::get('/vacinas', function () {
+    $vacinas = [];
+
+    if(auth()->check()){
+        $vacinas = Vacina::where('lote_id', auth()->user()->id)->get();
+    }
+
+    return view('vacinas', ['vacinas' => $vacinas]);
+});

@@ -1,7 +1,7 @@
 <nav>
     <ul>
         <li><a href="/">Inicio</a></li>
-        <li><a href="/vacina">Gerenciar vacinas</a></li>
+        <li><a href="/vacinas">Gerenciar vacinas</a></li>
         <li><a href="/vendidos">Lotes vendidos</a></li>
     </ul>
     <div class="navbar-right">
