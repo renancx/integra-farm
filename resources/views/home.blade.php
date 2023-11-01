@@ -44,6 +44,20 @@
                         @endforeach
                     </table>
 
+                    <button onclick="registerVacina('{{ $lote->id }}')">Nova vacina</button>
+                    <div id="new-vacina-{{ $lote->id }}" style="display: none">
+                        <h4>Nova vacina</h4>
+                        <form action="/vacina" method="POST">
+                            @csrf
+                            <input type="text" name="nome_vacina" placeholder="Nome da vacina" autocomplete="off">
+                            <input type="date" name="data_aplicacao" placeholder="Data de aplicação" autocomplete="off" value="{{ date('Y-m-d') }}">
+                            <input type="number" name="doses_vacina" placeholder="Doses" autocomplete="off">
+                            <input type="hidden" name="lote_id" value="{{ $lote->id }}">
+                            <button type="submit">Cadastrar</button>
+                            <button id="vacina-register-button-{{ $lote->id }}" type="button" onclick="hideRegisterVacinas('{{ $lote->id }}')">Cancelar</button>
+                        </form>
+                    </div>
+
                     <button onclick="hideVacinas('{{ $lote->id }}')">Fechar</button>
                 </div>
 

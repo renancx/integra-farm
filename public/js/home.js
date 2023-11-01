@@ -107,7 +107,6 @@ function changeDescription(titleNumber) {
 
 function showVacinas(loteID) {
     var vacinas = document.getElementById("vacina-list-" + loteID);
-    var vacinasButton = document.getElementById("vacina-button-" + loteID);
 
     if (vacinas.style.display === "none") {
         vacinas.style.display = "block";
@@ -118,11 +117,34 @@ function showVacinas(loteID) {
 
 function hideVacinas(loteID) {
     var vacinas = document.getElementById("vacina-list-" + loteID);
-    var vacinasButton = document.getElementById("vacina-button-" + loteID);
 
     if (vacinas.style.display === "block") {
         vacinas.style.display = "none";
     } else {
         vacinas.style.display = "block";
+    }
+}
+
+function registerVacina(loteID) {
+    var vacinaRegister = document.getElementById("new-vacina-" + loteID);
+    var vacinaRegisterButton = document.getElementById("vacina-register-button-" + loteID);
+
+    if (vacinaRegister.style.display === "none") {
+        vacinaRegister.style.display = "block";
+        vacinaRegisterButton.style.display = "none";
+    } else {
+        vacinaRegister.style.display = "none";
+    }
+}
+
+function hideRegisterVacina(loteID) {
+    var vacinaRegister = document.getElementById("new-vacina-" + loteID);
+    var vacinaRegisterButton = document.getElementById("vacina-register-button-" + loteID);
+
+    if (vacinaRegister.style.display === "block") {
+        vacinaRegister.style.display = "none";
+        vacinaRegisterButton.style.display = "block";
+    } else {
+        vacinaRegister.style.display = "block";
     }
 }

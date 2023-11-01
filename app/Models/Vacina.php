@@ -14,6 +14,8 @@ class Vacina extends Model
         'data_aplicacao'
     ];
 
+    public $timestamps = false;
+
     public function lote()
     {
         return $this->belongsTo(Lote::class, 'lote_id');

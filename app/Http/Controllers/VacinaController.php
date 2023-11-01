@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lote;
+use App\Models\Vacina;
 use Illuminate\Http\Request;
 
 class VacinaController extends Controller
@@ -15,5 +16,16 @@ class VacinaController extends Controller
         ->select('vacinas.*');
 
         return view('/', ['vacinas' => $vacinas]);
+    }
+
+    public function newVacina(Request $request){
+        $vacinas = new Vacina();
+        $vacinas->nome_vacina = $request->nome_vacina;
+        $vacinas->data_aplicacao = $request->data_aplicacao;
+        $vacinas->doses_vacina = $request->doses_vacina;
+        $vacinas->lote_id = $request->lote_id;
+        $vacinas->save();
+
+        return redirect('/');
     }
 }

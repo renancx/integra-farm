@@ -52,3 +52,4 @@ Route::get('/vendidos', function () {
 });
 
 //Controle de vacinas
+Route::post('/vacina', [VacinaController::class, 'newVacina']);
