@@ -35,11 +35,13 @@
                         <tr>
                             <th>Vacina</th>
                             <th>Data de aplicação</th>
-                            <th>Observação</th>
+                            <th>Doses</th>
                         </tr>
                         @foreach ($lote->vacinas as $vacina)
                         <tr>
                             <td>{{ $vacina->nome_vacina }}</td>
+                            <td>{{ $vacina->data_aplicacao }}</td>
+                            <td>{{ $vacina->doses_vacina }}</td>
                         </tr>
                         @endforeach
                     </table>
