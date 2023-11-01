@@ -31,6 +31,20 @@
 
                 <div class="vacina-list" id="vacina-list-{{ $lote->id }}" style="display: none">
                     <h4>Vacinas aplicadas</h4>
+                    <table>
+                        <tr>
+                            <th>Vacina</th>
+                            <th>Data de aplicação</th>
+                            <th>Observação</th>
+                        </tr>
+                        @foreach ($lote->vacinas as $vacina)
+                        <tr>
+                            <td>{{ $vacina->nome_vacina }}</td>
+                        </tr>
+                        @endforeach
+                    </table>
+
+                    <button onclick="hideVacinas('{{ $lote->id }}')">Fechar</button>
                 </div>
 
                 <div class="lote-details">

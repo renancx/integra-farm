@@ -115,3 +115,14 @@ function showVacinas(loteID) {
         vacinas.style.display = "none";
     }
 }
+
+function hideVacinas(loteID) {
+    var vacinas = document.getElementById("vacina-list-" + loteID);
+    var vacinasButton = document.getElementById("vacina-button-" + loteID);
+
+    if (vacinas.style.display === "block") {
+        vacinas.style.display = "none";
+    } else {
+        vacinas.style.display = "block";
+    }
+}
