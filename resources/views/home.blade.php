@@ -25,10 +25,18 @@
             @foreach ($lotes as $lote)
             @if ($lote->vendido_lote == false)
             <div class="lote-item">
+
+                <!-- Botão para visualizar as vacinas aplicadas nesse lote-->
+                <button onclick="showVacinas('{{ $lote->id }}')" id="vacina-button-{{ $lote->id }}">Vacinas aplicadas</button>
+
+                <div class="vacina-list" id="vacina-list-{{ $lote->id }}" style="display: none">
+                    <h4>Vacinas aplicadas</h4>
+                </div>
+
                 <div class="lote-details">
                     <p><strong>Tamanho do lote:</strong> {{ $lote->tamanho_lote }}</p>
-                    <p><strong>Data de chegada:</strong> {{ $lote->chegada_lote }}</p>
-                    <p><strong>Data de saída:</strong> {{ $lote->saida_lote }}</p>
+                    <p><strong>Chegada:</strong> {{ $lote->chegada_lote }}</p>
+                    <p><strong>Saída:</strong> {{ $lote->saida_lote }}</p>
                     <p><strong>Observação:</strong> {{ $lote->observacao_lote }}</p>
                 </div>
                 <div class="lote-actions">

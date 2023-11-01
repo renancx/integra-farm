@@ -52,12 +52,3 @@ Route::get('/vendidos', function () {
 });
 
 //Controle de vacinas
-Route::get('/vacinas', function () {
-    $vacinas = [];
-
-    if(auth()->check()){
-        $vacinas = Vacina::where('lote_id', auth()->user()->id)->get();
-    }
-
-    return view('vacinas', ['vacinas' => $vacinas]);
-});

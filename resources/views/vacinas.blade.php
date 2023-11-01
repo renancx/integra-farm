@@ -10,9 +10,13 @@
 <body>
     @auth
     @include('partials.navbar')
-    
+    <div id=vacinados>
+        <h1>Lotes vacinados</h1>
+    </div>
+
     @else
     @include('partials.guest')
+    <h1>Olá, visitante!</h1>
 
     @endauth
 </body>

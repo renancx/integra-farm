@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string('nome_vacina', 100)->primary();
             $table->date('data_aplicacao');
             $table->integer('doses_vacina');
-            $table->boolean('predefinida_vacina')->default(false);
             $table->unsignedBigInteger('lote_id');
             $table->foreign('lote_id')->references('id')->on('lotes');
         });
