@@ -27,6 +27,14 @@ class VacinaController extends Controller
             $vacinas->nome_vacina = $request->nome_vacina;
         }
 
+        $existingVacina = Vacina::where('nome_vacina', $vacinas->nome_vacina)->first();
+
+        if ($existingVacina){
+            
+            return redirect()->back()->with('error', 'Esta vacina já está cadastrada.');
+
+        }
+
         $vacinas->data_aplicacao = $request->data_aplicacao;
         $vacinas->doses_vacina = $request->doses_vacina;
         $vacinas->lote_id = $request->lote_id;
