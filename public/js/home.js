@@ -115,11 +115,13 @@ function showVacinas(loteID) {
     }
 }
 
-function hideVacinas(loteID) {
+function hideVacinas(loteID) { //fechar
     var vacinas = document.getElementById("vacina-list-" + loteID);
+    var vacinaRegister = document.getElementById("new-vacina-" + loteID);
 
     if (vacinas.style.display === "block") {
         vacinas.style.display = "none";
+        vacinaRegister.style.display = "none";
     } else {
         vacinas.style.display = "block";
     }
@@ -131,13 +133,13 @@ function registerVacina(loteID) {
 
     if (vacinaRegister.style.display === "none") {
         vacinaRegister.style.display = "block";
-        vacinaRegisterButton.style.display = "none";
+        vacinaRegisterButton.style.display = "block";
     } else {
         vacinaRegister.style.display = "none";
     }
 }
 
-function hideRegisterVacina(loteID) {
+function hideRegisterVacinas(loteID) {
     var vacinaRegister = document.getElementById("new-vacina-" + loteID);
     var vacinaRegisterButton = document.getElementById("vacina-register-button-" + loteID);
 
