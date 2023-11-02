@@ -20,7 +20,13 @@ class VacinaController extends Controller
 
     public function newVacina(Request $request){
         $vacinas = new Vacina();
-        $vacinas->nome_vacina = $request->nome_vacina;
+
+        if ($request->nome_vacina === 'outra'){
+            $vacinas->nome_vacina = $request->outra_vacina;
+        } else {
+            $vacinas->nome_vacina = $request->nome_vacina;
+        }
+
         $vacinas->data_aplicacao = $request->data_aplicacao;
         $vacinas->doses_vacina = $request->doses_vacina;
         $vacinas->lote_id = $request->lote_id;

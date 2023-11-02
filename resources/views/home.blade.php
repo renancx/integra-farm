@@ -49,9 +49,38 @@
                     <button onclick="registerVacina('{{ $lote->id }}')">Nova vacina</button>
                     <div id="new-vacina-{{ $lote->id }}" style="display: none">
                         <h4>Nova vacina</h4>
+
                         <form action="/vacina" method="POST">
                             @csrf
-                            <input type="text" name="nome_vacina" placeholder="Nome da vacina" autocomplete="off">
+                            <input type="radio" name="nome_vacina" value="Peste Suína Clássica (PSC)">Peste Suína Clássica (PSC)
+                            <input type="radio" name="nome_vacina" value="Cólera Suína (CS)">Cólera Suína (CS)
+                            <input type="radio" name="nome_vacina" value="Diarreia Epidêmica Suína (DES)">Diarreia Epidêmica Suína (DES)
+
+                            <input type="radio" name="nome_vacina" value="outra" id="outra-vacina-{{ $lote->id }}">Outra
+                            <input type="text" name="outra_vacina" autocomplete="off" id="outra-vacina-input-{{ $lote->id }}" style="display: none">
+
+                            <script>
+                               const outraRadio = document.getElementById("outra-vacina-{{ $lote->id }}");
+                                const outraVacinaInput = document.getElementById("outra-vacina-input-{{ $lote->id }}");
+
+                                outraRadio.addEventListener("change", function() {
+                                    if (outraRadio.checked) {
+                                        outraVacinaInput.style.display = "block";
+                                    } else {
+                                        outraVacinaInput.style.display = "none";
+                                    }
+                                });
+
+                                const radios = document.querySelectorAll('input[type="radio"][name="nome_vacina"]');
+                                radios.forEach(function(radio) {
+                                    if (radio.value !== "outra") {
+                                        radio.addEventListener("change", function() {
+                                            outraVacinaInput.style.display = "none";
+                                        });
+                                    }
+                                });
+                            </script>
+
                             <input type="date" name="data_aplicacao" placeholder="Data de aplicação" autocomplete="off" value="{{ date('Y-m-d') }}">
                             <input type="number" name="doses_vacina" placeholder="Doses" autocomplete="off">
                             <input type="hidden" name="lote_id" value="{{ $lote->id }}">
