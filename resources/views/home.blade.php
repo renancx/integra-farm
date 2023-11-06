@@ -26,6 +26,8 @@
             @if ($lote->vendido_lote == false)
             <div class="lote-item">
 
+                {{-- TODO: Mudar comentários html para blade --}}
+                {{-- <p>{{ $lote->id }}</p> --}}
                 <!-- Botão para visualizar as vacinas aplicadas nesse lote-->
                 <button onclick="showVacinas('{{ $lote->id }}')" id="vacina-button-{{ $lote->id }}">Vacinas aplicadas</button>
 
