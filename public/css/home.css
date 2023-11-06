@@ -1,32 +1,116 @@
-/* Reset de estilos padrão do navegador */
-body, h1, h2, table {
+/* Normalize */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #285;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
     text-align: center;
 }
 
-/* Estilos para o cabeçalho */
 h1 {
-    font-size: 24px;
-    margin-top: 20px;
-}
-
-/* Estilos para a área de autenticação */
-#lote-show, #lote-register {
-    margin: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
     margin-bottom: 10px;
+}
+
+/* Main */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Home page */
+#title {
+    font-size: 36px;
+}
+
+#subtitle {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#login, #register {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
+
+/* Lote list */
+#all-lotes-display {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px #bebebe;
+}
+
+.all-lotes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.lote-item {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px #bebebe;
+}
+
+.lote-details {
+    margin-top: 10px;
+}
+
+.lote-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Lote register */
+#lote-register {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
+
+/* Vacinas */
+.vacina-list {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
 }
 
 table {
@@ -34,130 +118,28 @@ table {
     border-collapse: collapse;
 }
 
-table, th, td {
-    border: 1px solid #000;
-}
-
 th, td {
-    padding: 5px;
-}
-
-/* Estilos para os formulários */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input, button {
-    margin: 5px;
-    padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 5px;
 }
 
-/* Estilos para botões */
+/* Buttons */
 button {
-    background-color: #fff;
-    color: #000000;
+    padding: 5px 10px;
     cursor: pointer;
+    background: #fff;
+    color: black;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 1px;
 }
 
-button:hover {
-    background-color: #fff;
-}
-
-/* Mostrar/ocultar os formulários de registro e login */
-#register, #login {
-    display: none;
-}
-
-.lote-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-} 
-  
-.lote-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 0;
-}
-
-nav {
-    background-color: #333;
-    padding: 5px; /* 10px em cima e embaixo, 0px nas laterais */
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-  
-nav ul li a:hover {
-    text-decoration: underline;
-} 
-
-/*----------------------*/
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-right h1 {
-    margin-right: 20px;
-}
-
-/* Estilo do botão Logout */
-#logout button {
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-#logout button:hover {
-    background-color: #ccc;
-}
-
+/* Container */
 .container {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.cont {
-    flex-direction:column;
-    font-size: 15px;
-}
-
-.left {
-    width: 45%;
-    padding: 10px;
-    background-color: #f2f2f2;
-    cursor: pointer;
-}
-
-.right {
-    width: 55%;
-    padding: 10px;
-    background-color: #e5e5e5;
-    position: relative;
+    justify-content: center;
 }

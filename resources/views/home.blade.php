@@ -19,11 +19,12 @@
 
     <h1>Hi, {{ auth()->user()->name }}</h1>
     
-    <div id="lote-show">
+    <div id="all-lotes-display">
         <h2>Lotes de suínos</h2>
-        <div class="lote-list">
+        <div class="all-lotes-list">
             @foreach ($lotes as $lote)
             @if ($lote->vendido_lote == false)
+
             <div class="lote-item">
 
                 {{-- TODO: Mudar comentários html para blade --}}
@@ -49,6 +50,11 @@
                     </table>
 
                     <button onclick="registerVacina('{{ $lote->id }}')">Nova vacina</button>
+
+
+
+
+
                     <div id="new-vacina-{{ $lote->id }}" style="display: none">
                         <h4>Nova vacina</h4>
 
@@ -91,8 +97,16 @@
                         </form>
                     </div>
 
+
+
+
+
                     <button onclick="hideVacinas('{{ $lote->id }}')">Fechar</button>
                 </div>
+
+
+
+
 
                 <div class="lote-details">
                     <p><strong>Tamanho do lote:</strong> {{ $lote->tamanho_lote }}</p>
@@ -100,11 +114,21 @@
                     <p><strong>Saída:</strong> {{ $lote->saida_lote }}</p>
                     <p><strong>Observação:</strong> {{ $lote->observacao_lote }}</p>
                 </div>
+
+
+
+
+
                 <div class="lote-actions">
                     <button onclick="showLoteEdit('{{ $lote->id }}')">Editar</button>
                     <button onclick="showLoteSell('{{ $lote->id }}')">Vender</button>
                 </div>
-                <div id="lote-edit-{{ $lote->id }}" class="lote-edit" style="display: none">
+
+
+
+
+
+                <div id="lote-edit-{{ $lote->id }}" class="lote-edit container" style="display: none">
                     <h4>Editar Lote</h4>
                     <form action="/lote-edit/{{ $lote->id }}" method="POST">
                         @csrf
@@ -117,6 +141,11 @@
                         <button type="button" onclick="hideLoteEdit('{{ $lote->id }}')">Cancelar</button>
                     </form>
                 </div>
+
+
+
+
+
                 <div id="lote-sell-{{ $lote->id }}" class="lote-sell" style="display: none">
                     <h4>Vender Lote</h4>
                     <form action="/lote-sell/{{ $lote->id }}" method="POST">
@@ -134,10 +163,18 @@
         </div>
     </div>
 
+
+
+
     <div>
         <button id="lote-button" onclick="showLoteRegister()">Novo lote</button>
     </div>
 
+
+
+
+
+    
     <div id="lote-register" style="display: none">
         <h2>Novo lote</h2>
         <form action="/lote" method="POST">
@@ -150,6 +187,10 @@
             <button type="button" onclick="hideLoteRegister()">Cancelar</button>
         </form>
     </div>
+
+
+
+
 
     @else
     <h1 id="title">Integrador</h1>
