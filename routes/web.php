@@ -53,3 +53,8 @@ Route::get('/vendidos', function () {
 
 //Controle de vacinas
 Route::post('/vacina', [VacinaController::class, 'newVacina']);
+
+Route::get("/vacinas", function () {
+    $vacinas = Vacina::all();
+    return view("vacinas", ["vacinas" => $vacinas]);
+});
