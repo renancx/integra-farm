@@ -12,4 +12,4 @@ Utilização do framework Laravel em PHP para o desenvolvimento do Back-End de u
 * Visualização de vacina aplicadas
 
 ## Trabalhos futuros
-* Desenvolvimento do Front-end da aplicação utilizando o framework React em Javascript.
+* Desenvolvimento do Front-end da aplicação utilizando algum framework.
